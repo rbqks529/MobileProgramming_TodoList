@@ -41,17 +41,17 @@ fun TodoList(todoList: MutableList<Item>, switchState: Boolean, modifier: Modifi
                     .fillMaxWidth()
                     .padding(vertical = 4.dp)
                     .toggleable(
-                    value = item.status == TodoStatus.COMPLETED,
-                    onValueChange = { ischecked ->
-                        val originalIndex = todoList.indexOf(item)
-                        todoList[originalIndex] =
-                            item.copy(
-                                status = if (ischecked) TodoStatus.COMPLETED
-                                else TodoStatus.PENDING
-                            )
-                    },
-                    role = Role.Checkbox
-                )
+                        value = item.status == TodoStatus.COMPLETED,
+                        onValueChange = { ischecked ->
+                            val originalIndex = todoList.indexOf(item)
+                            todoList[originalIndex] =
+                                item.copy(
+                                    status = if (ischecked) TodoStatus.COMPLETED
+                                    else TodoStatus.PENDING
+                                )
+                        },
+                        role = Role.Checkbox
+                    )
             ) {
                 Row(
                     modifier = Modifier
