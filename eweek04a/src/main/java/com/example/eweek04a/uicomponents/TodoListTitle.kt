@@ -14,7 +14,9 @@ import com.example.eweek04a.R
 @Composable
 fun TodoListTitle(modifier: Modifier = Modifier) {
     Text(
-        modifier = Modifier.padding(10.dp),
+        modifier = Modifier
+            .padding(vertical = 10.dp)
+            .padding(horizontal = 15.dp),
         text = stringResource(R.string.todolist_title),
         fontSize = 24.sp,
         fontWeight = FontWeight.Bold

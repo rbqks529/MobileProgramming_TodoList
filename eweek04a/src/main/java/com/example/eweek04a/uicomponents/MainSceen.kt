@@ -39,7 +39,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .padding(horizontal = 15.dp)
-                .padding(vertical = 15.dp)
+                .padding(vertical = 10.dp)
                 .fillMaxWidth(),
         ) {
             Text(text = "미완료 항목만 보기")
