@@ -54,8 +54,7 @@ fun TodoList(todoList: MutableList<Item>, switchState: Boolean, modifier: Modifi
                     )
             ) {
                 Row(
-                    modifier = Modifier
-                        .padding(vertical = 5.dp),
+                    modifier = Modifier.padding(vertical = 5.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     // TODO: 아직은 체크 상태 변경이 감지되지 않음 -> 리스트를 State로 사용해서 해결 못함
