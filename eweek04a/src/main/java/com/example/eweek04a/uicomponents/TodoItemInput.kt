@@ -36,7 +36,7 @@ fun TodoItemInput(todoList: MutableList<Item>, modifier: Modifier = Modifier) {
             placeholder = { Text("할 일을 입력하세요.") }
         )
         Button(
-            // TODO: 눌렀을 때 리스트에 추가하는 거 완성하기 (시간정보 생성해서 아이템 만들고 리스트 추가)
+            // 눌렀을 때 리스트에 추가하는 거 완성하기 (시간정보 생성해서 아이템 만들고 리스트 추가)
             onClick = {
                 val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM-dd HH:mm"))
                 todoList.add(Item(textFieldState, currentTime))

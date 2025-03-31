@@ -57,7 +57,7 @@ fun TodoList(todoList: MutableList<Item>, switchState: Boolean, modifier: Modifi
                     modifier = Modifier.padding(vertical = 5.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    // TODO: 아직은 체크 상태 변경이 감지되지 않음 -> 리스트를 State로 사용해서 해결 못함
+                    // 아직은 체크 상태 변경이 감지되지 않음 -> 리스트를 State로 사용해서 해결 못함
                     // 리스트 안의 아이템의 일부 속성의 변경은 감지 못함 -> item을 새로 생성해서 넣어주면 됨
                     Spacer(modifier = Modifier.width(10.dp))
                     TodoCheckbox(checked = item.status == TodoStatus.COMPLETED)
