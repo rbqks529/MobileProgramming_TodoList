@@ -8,13 +8,12 @@ import androidx.compose.ui.Modifier
 //람다 함수는 마지막 인자일 때 함수 괄호 밖에 기술 가능
 fun TodoCheckbox(
     checked: Boolean,
-    modifier: Modifier = Modifier,
-    onCheckedChange: (Boolean) -> Unit
+    modifier: Modifier = Modifier
 ) {
     Checkbox(
         checked = checked,
         //checkbox와 관련된 데이터는 리스트에 있음
-        onCheckedChange = { checked -> onCheckedChange(checked) }
+        onCheckedChange = null
         //onCheckedChange = {onCheckedChange(it)}
     )
 }
