@@ -1,6 +1,3 @@
-// TODO: 강의 자료에 있는 리소스 불러오기 연습하는거 
-
-/*
 package com.example.eweek05a.uicomponents
 
 import androidx.compose.foundation.layout.Column
@@ -19,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.eweek05a.R
 
+// TODO: 강의 자료에 있는 리소스 불러오기 연습하는거
 
 @Preview
 @Composable
@@ -56,10 +54,9 @@ private fun ColorResourceExample() {
 @Composable
 private fun IconResourceExample() {
     Column {
-        Icon(painter = painterResource(id = R.drawable.baseline_shopping_cart_24),
+        Icon(painter = painterResource(id = R.drawable.baseline_airplay_24),
             contentDescription = null)
         Icon(Icons.Default.Menu, contentDescription = null)
     }
 }
 
-*/
