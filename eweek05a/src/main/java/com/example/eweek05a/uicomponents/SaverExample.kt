@@ -1,4 +1,3 @@
-/*
 package com.example.eweek05a.uicomponents
 
 import android.os.Parcelable
@@ -29,6 +28,7 @@ fun CityScreen(modifier: Modifier = Modifier) {
     Text("${selectedCity.name} ${selectedCity.country}")
 }
 
+// 직렬화 기능을 사용해도 되는 객체임
 data class City2(val name: String, val country: String) {
     companion object {
         val nameKey = "Name"
@@ -95,8 +95,10 @@ fun CityScreen4(modifier: Modifier = Modifier) {
 
 @Composable
 fun CityScreen5(modifier: Modifier = Modifier) {
+    //리스트를 state로 사용 저장할 데이터는 Any고 복원할 데이터 타입은 리스트
     val cityListSaver = listSaver<SnapshotStateList<City2>, Any>(
         save = { list ->
+            // 리스트안에 리스트를 펼쳐서 저장
             list.flatMap { city ->
                 listOf<Any>(
                     city.name, city.country
@@ -104,6 +106,7 @@ fun CityScreen5(modifier: Modifier = Modifier) {
             }
         },
         restore = { flat ->
+            // restore 할때는 묶어야 하기에 chunked를 사용
             flat.chunked(2).map { (name, country) ->
                 City2(
                     name as String, country as String
@@ -129,13 +132,14 @@ fun CityScreen6(modifier: Modifier = Modifier) {
     val cityMapSaver = mapSaver(
         save = { list ->
             mapOf(
-                "names" to list.map { it.name },
-                "countries" to list.map { it.country }
+                "names" to list.map { it.name },    // 키가 이름
+                "countries" to list.map { it.country }  //키가 country
             )
         },
         restore = { map ->
             val names = map["names"] as List<String>
             val countries = map["countries"] as List<String>
+            // zip을 통해서 묶음
             names.zip(countries)
                 .map { (name, country) -> City2(name, country) }
                 .toMutableStateList()
@@ -154,4 +158,4 @@ fun CityScreen6(modifier: Modifier = Modifier) {
         }
     }
 
-}*/
+}
