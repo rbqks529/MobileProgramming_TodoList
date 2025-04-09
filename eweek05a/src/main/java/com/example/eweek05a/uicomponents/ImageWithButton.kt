@@ -1,7 +1,6 @@
 package com.example.eweek05a.uicomponents
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
@@ -16,20 +15,25 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.example.eweek05a.R
+import com.example.eweek05a.model.ImageUri
 
 @Composable
 fun ImageWithButton(
-    image: Int,
+    image: ImageUri,
     modifier: Modifier = Modifier,
     button: @Composable () -> Unit
 ) {
+    val img = when(image){
+        is ImageUri.ResImage -> image.resID
+        is ImageUri.WebImage -> image.webUrl
+    }
+
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         AsyncImage(
-            model = image,
+            model = img,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -40,15 +44,6 @@ fun ImageWithButton(
     }
 }
 
-@Preview
-@Composable
-private fun ImageWithButtonPreview() {
-    var likes by remember { mutableIntStateOf(0) }
-
-    ImageWithButton(image = R.drawable.img1) {
-        ButtonWithBadge(likes = likes) { likes++ }
-    }
-}
 
 // URL로 이미지를 받는 버튼 (오버라이딩)
 @Composable
@@ -58,7 +53,7 @@ fun ImageWithButton(
     button: @Composable () -> Unit
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         AsyncImage(
