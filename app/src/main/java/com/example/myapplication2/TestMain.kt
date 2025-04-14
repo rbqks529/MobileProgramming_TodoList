@@ -52,14 +52,17 @@ package com.example.myapplication2
 /**
  * 고차함수
  */
-//fun highOrderFunction1(func:()->Unit): Unit = func()
+//fun highOrderFunction1(func:()->Unit) = func()
 //fun highOrderFunction2():()->Unit = { println("greenjoa") }
-//fun highOrderFunction3(func:()->Unit):Unit = func()
+//fun highOrderFunction3(func:()->Unit): () -> Unit = func
 //
 //fun main() {
 //    highOrderFunction1 { println("hello") }
 //    highOrderFunction2()()
-//    highOrderFunction3 { println("world") }
+//    highOrderFunction3 { println("world") }()
+//
+//    val color = {println("asdasd")}
+//    color()
 //}
 
 //fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int) = operation(a, b)
@@ -147,9 +150,8 @@ package com.example.myapplication2
 //    constructor(name:String, addr:String):this(name){
 //        this.addr = addr
 //    }
-//    constructor(name:String, addr:String, tel:String):this(name){
+//    constructor(name:String, addr:String, tel:String):this(name, addr){
 //        this.tel = tel
-//        this.addr = addr
 //    }
 //    fun printName() = print(name)
 //    fun printAddr() = print(addr)
@@ -238,7 +240,7 @@ package com.example.myapplication2
 //abstract class Vehicle {
 //    abstract fun drive()
 //}
-
+//
 //interface Flyable {
 //    fun fly()
 //}
@@ -479,10 +481,6 @@ package com.example.myapplication2
 //fun main() {
 //    val fruits = listOf("Apple", "Banana", "Cherry")
 //    for((index, fruit) in fruits.withIndex()){
-//        println("Index $index: $fruit")
-//    }
-//
-//    fruits.forEachIndexed { index, fruit ->
 //        println("Index $index: $fruit")
 //    }
 //}
