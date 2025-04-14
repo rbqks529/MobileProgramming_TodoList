@@ -26,10 +26,10 @@
       </SelectionState>
       <SelectionState runConfigName="eweek05a">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-04-14T09:10:29.534707400Z">
+        <DropdownSelection timestamp="2025-04-14T09:19:59.005773100Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\rbqks\.android\avd\New_Device.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\rbqks\.android\avd\Pixel_8_API_35.avd" />
             </handle>
           </Target>
         </DropdownSelection>
