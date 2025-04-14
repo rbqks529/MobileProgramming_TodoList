@@ -1,4 +1,4 @@
-package com.example.week02
+package com.example.myapplication2
 
 /**
  * 함수 만들기
@@ -6,8 +6,8 @@ package com.example.week02
 //fun add(a: Int, b: Int): Int {
 //    return a + b
 //}
-
-//fun add(a:Int, b:Int) = a + b
+//
+////fun add(a:Int, b:Int) = a + b
 //
 //fun main() {
 //    val result = add(10, 20)
@@ -18,11 +18,11 @@ package com.example.week02
  * 람다함수 만들기
  */
 //fun main() {
-//    val multiply: (Int, Int) -> Int = { a, b -> a * b }
+//    val multiply: (Int, Int) -> Int = { a: Int, b: Int -> a * b }
 //    println("5 * 4 = ${multiply(5, 4)}")
 //
 //    val greet: (String) -> String = { name -> "Hello, $name!" }
-//    println(greet("Kotlin"))
+//    println(greet("Kotlin"));
 //}
 
 /**
@@ -36,8 +36,8 @@ package com.example.week02
 //fun performOperation(a: Int, b: Int, operation: (Int, Int) -> Int) = operation(a, b)
 //
 //fun main() {
-//    val result = performOperation(8, 2) { x, y -> x - y }
-//    println("8 - 2 = $result")
+//    val result = performOperation(8, 2) { x, y -> x + y }
+//    println("8 + 2 = $result")
 //}
 
 /**
@@ -52,14 +52,14 @@ package com.example.week02
 /**
  * 고차함수
  */
-//fun highOrderFunction1(func:()->Unit) = func()
+//fun highOrderFunction1(func:()->Unit): Unit = func()
 //fun highOrderFunction2():()->Unit = { println("greenjoa") }
-//fun highOrderFunction3(func:()->Unit):()->Unit = func
+//fun highOrderFunction3(func:()->Unit):Unit = func()
 //
 //fun main() {
 //    highOrderFunction1 { println("hello") }
 //    highOrderFunction2()()
-//    highOrderFunction3 { println("world") }()
+//    highOrderFunction3 { println("world") }
 //}
 
 //fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int) = operation(a, b)
@@ -82,7 +82,7 @@ package com.example.week02
 //    println("Kotlin".lastChar())
 //}
 
-//fun String.removeFirstLastChar():String = this.substring(1, this.length-1)
+//fun String.removeFirstLastChar() = this.substring(1, this.length-1)
 //fun main() {
 //    println("HelloWorld".removeFirstLastChar())
 //}
@@ -147,8 +147,9 @@ package com.example.week02
 //    constructor(name:String, addr:String):this(name){
 //        this.addr = addr
 //    }
-//    constructor(name:String, addr:String, tel:String):this(name,addr){
+//    constructor(name:String, addr:String, tel:String):this(name){
 //        this.tel = tel
+//        this.addr = addr
 //    }
 //    fun printName() = print(name)
 //    fun printAddr() = print(addr)
@@ -347,7 +348,11 @@ package com.example.week02
 //
 //fun main() {
 //    val result = Result.Success("Operation Successful")
+//    val fail = Result.Failure("dasdas")
 //    handleResult(result)
+//    handleResult(fail)
+//    val loading = Result.Loading
+//    handleResult(loading)
 //}
 
 /**
@@ -388,7 +393,7 @@ package com.example.week02
  * 컬렉션의 유용한 함수
  */
 //fun main() {
-//    val numbers = listOf(5, 2, 8, 1, 3)
+//    val numbers = mutableListOf(5, 2, 8, 1, 3)
 //    val sortedNumbers = numbers.sorted()
 //    println(sortedNumbers)
 //
@@ -476,6 +481,10 @@ package com.example.week02
 //    for((index, fruit) in fruits.withIndex()){
 //        println("Index $index: $fruit")
 //    }
+//
+//    fruits.forEachIndexed { index, fruit ->
+//        println("Index $index: $fruit")
+//    }
 //}
 
 //fun main() {
@@ -497,11 +506,11 @@ package com.example.week02
 /**
  * Scope 함수
  */
-class Person {
-    var name: String = "Unknown"
-    var age: Int = 0
-    override fun toString() = "Person(name=$name, age=$age)"
-}
+//class Person {
+//    var name: String = "Unknown"
+//    var age: Int = 0
+//    override fun toString() = "Person(name=$name, age=$age)"
+//}
 
 //fun main() {
 //    val person = Person().apply {
