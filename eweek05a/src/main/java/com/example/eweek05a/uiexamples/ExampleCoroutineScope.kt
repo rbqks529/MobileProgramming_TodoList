@@ -18,19 +18,23 @@ import kotlin.random.Random
 
 @Composable
 fun RandomColorButton() {
+    // 코루틴 스코프 객체 (Composable 함수 내의 특정 이벤트 안에서만 실행 가능)
     val scope = rememberCoroutineScope()
+    // Color는 기본이 빨강
     var color by remember { mutableStateOf(Color.Red) }
-
+    
     Column {
         Button(
             onClick = {
                 scope.launch {
+                    // 버튼을 누르면 난수 발생을 통해 색상 변경
                     while (true) {
+                        // 색이 너무 빨리 변하기에 delay함수(suspend fun)를 사용
                         delay(500)
                         color = Color(
-                            Random.nextInt(0xFF),
-                            Random.nextInt(0xFF),
-                            Random.nextInt(0xFF),
+                            Random.nextInt(0xFF),   //R
+                            Random.nextInt(0xFF),   //G
+                            Random.nextInt(0xFF),   //B
                             0xFF
                         )
                     }
@@ -50,7 +54,9 @@ fun RandomColorButton2() {
 
     Column {
         Button(
+            // 코루틴을 두 개 생성
             onClick = {
+                // job을 받아서 저장
                val job = scope.launch {
                     while (true) {
                         delay(500)
@@ -63,6 +69,7 @@ fun RandomColorButton2() {
                     }
                 }
 
+                // 2초 후에 위에서 진행 중인 코루틴 작업을 취소 (2초 동안만 색상이 변경됨)
                 scope.launch {
                     delay(2000)
                     job.cancel()

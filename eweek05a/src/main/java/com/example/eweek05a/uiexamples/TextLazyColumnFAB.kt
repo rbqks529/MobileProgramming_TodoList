@@ -23,18 +23,21 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun TextLazyColumnFAB(dataList: MutableList<String>, modifier: Modifier = Modifier) {
-    val state = rememberLazyListState()
-    val scope = rememberCoroutineScope()
+    val state = rememberLazyListState() // LazyColumn을 스크롤 하기 위한 state
+    val scope = rememberCoroutineScope()  // 코루틴 스코프 객체를 생성
 
     val showButton by remember {
+        // 다른 state(firstVisibleItemIndex)에 따라서 값이 변경됨 -> 효율적임
         derivedStateOf {
+            // top에 있는 content의 인덱스가 firstVisibleItemIndex
             state.firstVisibleItemIndex > 0
         }
     }
 
+    // Box의 제일 위에 FAB를 배치 하면됨 (제일 마지막에 선언)
     Box(modifier = Modifier.fillMaxSize()) {
         LazyColumn(
-            state = state,
+            state = state,  //state를 인자로 줌
             modifier = modifier,
             contentPadding = PaddingValues(10.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp),
@@ -44,10 +47,12 @@ fun TextLazyColumnFAB(dataList: MutableList<String>, modifier: Modifier = Modifi
                 TextCell(text = item, Modifier.background(Color.Green))
             }
         }
+        // showButton이라는 상태에 따라서 FAB가 보이고 안보이고 할 수 있음
         AnimatedVisibility(visible = showButton) {
             ScrollToTopButton {
+                // 인자로 함수를 FAB에 전달
                 scope.launch {
-                    state.scrollToItem(0)
+                    state.scrollToItem(0) // scrollToItem도 suspend fun임
                 }
             }
         }

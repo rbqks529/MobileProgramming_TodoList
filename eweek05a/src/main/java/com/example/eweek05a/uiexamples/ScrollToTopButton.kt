@@ -22,7 +22,7 @@ fun ScrollToTopButton(goToTop: () -> Unit) {
                 .padding(16.dp)
                 .size(50.dp)
                 .align(Alignment.BottomEnd),
-            onClick = goToTop
+            onClick = goToTop   //goToTop이라는 함수를 실행
         ) {
             Icon(
                 Icons.Default.Home,
@@ -35,7 +35,7 @@ fun ScrollToTopButton(goToTop: () -> Unit) {
 //@Composable
 //fun ScrollToTopButton(goToTop: () -> Unit) {
 //    Box(modifier = Modifier.fillMaxSize()) {
-//        OutlinedButton(
+//        OutlinedButton(   //OutlinedButton 으로 FAB를 대신할 수 있음
 //            onClick = goToTop,
 //            border = BorderStroke(1.dp, Color.Gray),
 //            shape = RoundedCornerShape(50),
