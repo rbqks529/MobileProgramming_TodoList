@@ -35,7 +35,7 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ButtonWithIconSample">
+      <SelectionState runConfigName="eweek07a">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
