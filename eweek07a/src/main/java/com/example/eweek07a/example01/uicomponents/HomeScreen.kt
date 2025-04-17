@@ -31,9 +31,8 @@ fun HomeScreen(onNavigateA: () -> Unit, onNavigateB: () -> Unit) {
             Text(text = "Screen A")
         }
 
-        Button(onClick = {
-            onNavigateB()   // B로 이동
-        }) {
+        Button(onClick = onNavigateB   // B로 이동
+        ) {
             Text(text = "Screen B")
         }
     }

@@ -1,4 +1,4 @@
-package com.example.eweek05a.uiexamples
+package com.example.eweek05a.lazyexamples
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

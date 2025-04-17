@@ -1,4 +1,4 @@
-package com.example.eweek05a.uicomponents
+package com.example.eweek05a.example
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

@@ -23,7 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.eweek05a.uiexamples.ScrollToTopButton
+import com.example.eweek05a.lazyexamples.ScrollToTopButton
 import com.example.eweek05a.viewmodel.ImageViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
