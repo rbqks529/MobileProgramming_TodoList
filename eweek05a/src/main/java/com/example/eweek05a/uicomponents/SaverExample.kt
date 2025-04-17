@@ -28,7 +28,7 @@ fun CityScreen(modifier: Modifier = Modifier) {
     Text("${selectedCity.name} ${selectedCity.country}")
 }
 
-// 직렬화 기능을 사용해도 되는 객체임
+// 직렬화 기능을 사용해도 되는 객체임( mapSaver와 listSaver로 구현 해본거)
 data class City2(val name: String, val country: String) {
     companion object {
         val nameKey = "Name"
@@ -93,6 +93,7 @@ fun CityScreen4(modifier: Modifier = Modifier) {
     Text("${selectedCity.name}\t${selectedCity.country}")
 }
 
+// TODO: 리스트 데이터를 State로 사용할때 Saver 예시
 @Composable
 fun CityScreen5(modifier: Modifier = Modifier) {
     //리스트를 state로 사용 저장할 데이터는 Any고 복원할 데이터 타입은 리스트
@@ -114,9 +115,12 @@ fun CityScreen5(modifier: Modifier = Modifier) {
             }.toMutableStateList()
         }
     )
+    // MutableList를 Remember처럼 저장 가능
     val cityList = rememberSaveable(saver = cityListSaver) {
         mutableStateListOf<City2>(
-            City2("Madrid", "Spain"), City2("ToKyo", "Japan"), City2("Seoul", "Korea")
+            City2("Madrid", "Spain"),
+            City2("ToKyo", "Japan"),
+            City2("Seoul", "Korea")
         )
     }
 

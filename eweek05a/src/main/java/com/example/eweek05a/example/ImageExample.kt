@@ -56,6 +56,16 @@ private fun VectorImageExample2() {
     )
 }
 
+@Preview
+@Composable
+private fun VectorImageExample3() {
+    val vectorImage = ImageVector.vectorResource(id = R.drawable.baseline_airplay_24)
+    AsyncImage(
+        model = R.drawable.baseline_airplay_24,
+        contentDescription = null
+    )
+}
+
 //라이브러리 설치 : io.coil-kt.coil3:coil-compose
 @Preview
 @Composable
