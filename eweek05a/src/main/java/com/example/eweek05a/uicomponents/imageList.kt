@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import com.example.eweek05a.model.ButtonType
 import com.example.eweek05a.model.ImageData
 
-// 이전에 rememberSavable + Column(스크롤 가능)로 할때 쓴 예제
+// 이전에 ViewModel + Column(스크롤 가능)로 할때 쓴 예제
 @Composable
 fun ImageList(
     modifier: Modifier = Modifier,

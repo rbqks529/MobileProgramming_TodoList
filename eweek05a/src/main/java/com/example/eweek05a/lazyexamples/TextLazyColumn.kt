@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 fun TextLazyColumn(dataList: MutableList<String>, modifier: Modifier = Modifier) {
     LazyColumn(
         modifier = modifier,
-        //scroll 할때 content가 안 잘림
+        //content가 사이드에서 안 잘림
         contentPadding = PaddingValues(10.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally

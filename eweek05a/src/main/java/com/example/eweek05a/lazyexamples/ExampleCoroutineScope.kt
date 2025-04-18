@@ -12,6 +12,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.random.Random
@@ -22,7 +24,7 @@ fun RandomColorButton() {
     val scope = rememberCoroutineScope()
     // Color는 기본이 빨강
     var color by remember { mutableStateOf(Color.Red) }
-    
+
     Column {
         Button(
             onClick = {

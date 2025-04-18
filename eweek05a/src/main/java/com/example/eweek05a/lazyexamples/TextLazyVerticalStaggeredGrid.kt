@@ -22,15 +22,14 @@ fun TextLazyVerticalStaggeredGrid(dataList: List<String>, modifier: Modifier = M
         verticalItemSpacing = 10.dp,
         horizontalArrangement = Arrangement.spacedBy(10.dp),
         contentPadding = PaddingValues(10.dp),
-        //content는 밖으로 빼도 됨
-        content = {
-            items(dataList) { item ->
-                //랜덤 크기로 설정
-                TextCellRandomSize(text = item, Modifier.background(Color.Green))
-            }
-        },
         modifier = Modifier.fillMaxSize()
-    )
+    ) {
+        //content는 밖으로 빼도 됨
+        items(dataList) { item ->
+            //랜덤 크기로 설정
+            TextCellRandomSize(text = item, Modifier.background(Color.Green))
+        }
+    }
 }
 
 @Preview

@@ -20,13 +20,13 @@ import androidx.compose.ui.unit.dp
 fun TextLazyGrid(dataList: MutableList<String>, modifier: Modifier = Modifier) {
     LazyVerticalGrid(
         //columns = GridCells.Adaptive(minSize = 100.dp),
-        columns = GridCells.Fixed(2),   //한 행에 2개로 고정
+        columns = GridCells.Fixed(2),   //한 행에 2개로 고정 (필수)
         modifier = modifier,
         contentPadding = PaddingValues(10.dp),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        //span을 통해서 맨 위에 한 줄을 number로 합침 (maxLinsSpan -> 전체를 다 합침)
+        //span을 통해서 맨 위에 한 줄을 number로 합침 (maxLinsSpan -> 한 줄 전체를 다 합침)
         item(span = { GridItemSpan(maxLineSpan) }){
             Text("Number")
         }

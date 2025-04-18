@@ -39,6 +39,7 @@ fun MainScreen(
     val imageList = imageViewModel.imageList
     val orientation = LocalConfiguration.current.orientation
     val state: LazyListState = rememberLazyListState()
+    // 코루틴 스코프 객체 (Composable 함수 내의 특정 이벤트 안에서만 실행 가능)
     val scope: CoroutineScope = rememberCoroutineScope()
 
     val showButton by remember {

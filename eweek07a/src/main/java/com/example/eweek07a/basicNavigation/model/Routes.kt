@@ -1,4 +1,4 @@
-package com.example.eweek07a.example01.model
+package com.example.eweek07a.basicNavigation.model
 
 // 경로 문자열을 생성
 sealed class Routes(val route: String) {

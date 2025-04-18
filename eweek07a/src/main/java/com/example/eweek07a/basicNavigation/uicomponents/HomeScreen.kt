@@ -1,4 +1,4 @@
-package com.example.eweek07a.example01.uicomponents
+package com.example.eweek07a.basicNavigation.uicomponents
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,23 +11,29 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// C에서는 홈으로 이동하기에 홈으로 가는 람다 함수를 전달 받음
+// 인자로 람다 함수 두 개를 인자로 받음 (NavGraph에서 전달)
 @Composable
-fun Screen_C(onNavigate:()->Unit) {
-    Column(modifier = Modifier.fillMaxSize(),
+fun HomeScreen(onNavigateA: () -> Unit, onNavigateB: () -> Unit) {
+    Column(
+        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ) {
         Text(
-            text="Screen C",
+            text = "Home Screen",
             fontSize = 40.sp,
             fontWeight = FontWeight.ExtraBold
         )
 
         Button(onClick = {
-            onNavigate()
-        }){
-            Text(text = "Go to Home Screen")
+            onNavigateA()   // A로 이동
+        }) {
+            Text(text = "Screen A")
+        }
+
+        Button(onClick = onNavigateB   // B로 이동
+        ) {
+            Text(text = "Screen B")
         }
     }
 }

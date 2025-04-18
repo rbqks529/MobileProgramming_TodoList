@@ -23,13 +23,14 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun TextLazyColumnFAB(dataList: MutableList<String>, modifier: Modifier = Modifier) {
-    val state = rememberLazyListState() // LazyColumn을 스크롤 하기 위한 state
+    val state = rememberLazyListState() // LazyColumn의 스크롤 위치를 이동 하기 위한 state
     val scope = rememberCoroutineScope()  // 코루틴 스코프 객체를 생성
 
     val showButton by remember {
         // 다른 state(firstVisibleItemIndex)에 따라서 값이 변경됨 -> 효율적임
         derivedStateOf {
             // top에 있는 content의 인덱스가 firstVisibleItemIndex
+            // Compose는 의존된 값(state.firstVisibleItemIndex) 가 정말로 바뀌었을 때만 recomposition을 트리거 함
             state.firstVisibleItemIndex > 0
         }
     }

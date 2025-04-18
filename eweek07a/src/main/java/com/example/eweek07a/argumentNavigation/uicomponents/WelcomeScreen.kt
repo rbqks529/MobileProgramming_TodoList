@@ -1,4 +1,4 @@
-package com.example.eweek07a.example01.uicomponents
+package com.example.week06.example02.uicomponents
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,14 +11,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Screen_B() {
+fun WelcomeScreen(userID: String?) {
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ){
+        horizontalAlignment = Alignment.CenterHorizontally) {
+
         Text(
-            text="Screen B",
+            text = "Welcome Screen",
             fontSize = 40.sp,
+            fontWeight = FontWeight.ExtraBold
+        )
+
+        Text(
+            text = "Welcome, ${userID}",
+            fontSize = 20.sp,
             fontWeight = FontWeight.ExtraBold
         )
     }

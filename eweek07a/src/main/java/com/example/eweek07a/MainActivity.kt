@@ -8,8 +8,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.eweek07a.example01.uicomponents.MainScreen
+import com.example.eweek07a.basicNavigation.uicomponents.MainScreen
 import com.example.eweek07a.ui.theme.MyApplication2Theme
+import com.example.week06.example02.uicomponents.LoginMainScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyApplication2Theme {
-                MainScreen()
+                LoginMainScreen()
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 //                    Greeting(
 //                        name = "Android",
