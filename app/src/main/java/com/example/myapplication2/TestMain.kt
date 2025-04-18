@@ -7,7 +7,7 @@ package com.example.myapplication2
 //    return a + b
 //}
 //
-////fun add(a:Int, b:Int) = a + b
+//fun add(a:Int, b:Int) = a + b
 //
 //fun main() {
 //    val result = add(10, 20)
@@ -237,31 +237,38 @@ package com.example.myapplication2
 /**
  * 인터페이스와 클래스 상속
  */
-//abstract class Vehicle {
-//    abstract fun drive()
-//}
-//
-//interface Flyable {
-//    fun fly()
-//}
-//
-//class Car : Vehicle() {
-//    override fun drive() = println("Driving a car")
-//}
-//
-//class Airplane : Vehicle(), Flyable {
-//    override fun drive() = println("Driving an airplane on the runway")
-//    override fun fly() = println("Flying an airplane")
-//}
-//
-//fun main() {
-//    val car = Car()
-//    car.drive()
-//
-//    val airplane = Airplane()
-//    airplane.drive()
-//    airplane.fly()
-//}
+/*abstract class Vehicle {
+    abstract fun drive()
+    fun parking() = println("Parking")
+}
+
+interface Flyable {
+    fun fly()
+    fun fly2() = println("")
+    var count: Int
+}
+
+class Car : Vehicle() {
+    override fun drive() = println("Driving a car")
+}
+
+// 인터페이스와 클래스를 동시에 상속
+class Airplane : Vehicle(), Flyable {
+    override fun drive() = println("Driving an airplane on the runway")
+    override fun fly() = println("Flying an airplane")
+    override var count = 1
+}
+
+fun main() {
+    val car = Car()
+    car.drive()
+    car.parking()
+
+    val airplane = Airplane()
+    airplane.drive()
+    airplane.fly()
+    airplane.parking()
+}*/
 
 /**
  * object 클래스
@@ -280,26 +287,38 @@ package com.example.myapplication2
 //    println(Counter.count)
 //}
 
-//open class Person(name:String, age:Int){
-//    init{
-//        println("name: $name, age:$age")
-//    }
-//    fun eat()=println("Eating food.")
-//    fun talk()=println("Talking with people")
-//    open fun pray() = println("Praying god.")
-//}
-//
-//val atheist = object:Person("greenjoa", 23){
-//    override fun pray() {
-//        println("I don't pray. I am an atheist.")
-//    }
-//}
-//
-//fun main() {
-//    atheist.eat()
-//    atheist.talk()
-//    atheist.pray()
-//}
+/*open class Person(name: String, age: Int) {
+    init {
+        println("name: $name, age:$age")
+    }
+
+    fun eat() = println("Eating food.")
+    fun talk() = println("Talking with people")
+    open fun pray() = println("Praying god.")
+}
+
+val atheist = object : Person("greenjoa", 23) {
+    override fun pray() {
+        println("I don't pray. I am an atheist.")
+    }
+}
+
+// 그냥 한번 해봄
+object adult : Person("name", 20) {
+    override fun pray() {
+        println("I don't believe god")
+    }
+}
+
+fun main() {
+    atheist.eat()
+    atheist.talk()
+    atheist.pray()
+
+    adult.eat()
+    adult.talk()
+    adult.pray()
+}*/
 
 /**
  * Data 클래스
@@ -314,6 +333,7 @@ package com.example.myapplication2
 //    println(user1 == user2) // true
 //}
 
+// TODO: data class의 equal을 다르게 사용
 //data class User(val name: String, val age: Int){
 //    override fun equals(other: Any?): Boolean {
 //        if(other is User)
@@ -411,9 +431,9 @@ package com.example.myapplication2
 //
 //fun main() {
 //    val users = listOf(
-//        User("홍길동", 20),
-//        User("이길동", 28),
-//        User("고길동", 20)
+//        User("bde", 20),
+//        User("cbd", 28),
+//        User("abc", 20)
 //    )
 //    val sortedUsers = users.sorted()
 //    val descendingUsers = users.sortedDescending()
@@ -452,13 +472,16 @@ package com.example.myapplication2
 //data class User(val name: String, val age: Int)
 //
 //fun main() {
-//    val users = listOf(
+//    val users = mutableListOf(
 //        User("홍길동", 20),
 //        User("이길동", 28),
 //        User("고길동", 20)
 //    )
 //    val user = users.filter { it.name=="이길동" }
 //    println(user)
+//
+//    val user2 = users.filter { it.name.contains("동") }
+//    println(user2)
 //}
 
 //fun main() {
@@ -504,11 +527,11 @@ package com.example.myapplication2
 /**
  * Scope 함수
  */
-//class Person {
-//    var name: String = "Unknown"
-//    var age: Int = 0
-//    override fun toString() = "Person(name=$name, age=$age)"
-//}
+class Person {
+    var name: String = "Unknown"
+    var age: Int = 0
+    override fun toString() = "Person(name=$name, age=$age)"
+}
 
 //fun main() {
 //    val person = Person().apply {
@@ -542,14 +565,14 @@ package com.example.myapplication2
 //    println("변경 후: $numbers")
 //}
 
-//fun main() {
-//    val person = Person()
-//    val result = with(person) {
-//        this.name = "Charlie"
-//        this.age = 35
-//        println("$name, $age")
-//        this.age + 10
-//    }
-//    println(person)
-//    println(result)
-//}
+fun main() {
+    val person = Person()
+    val result = with(person) {
+        this.name = "Charlie"
+        this.age = 35
+        println("$name, $age")
+        this.age + 10
+    }
+    println(person)
+    println(result)
+}

@@ -37,7 +37,7 @@ fun LoginNavGraph(navController: NavHostController) {
         // 로그인이 성공했을 때의 화면(유저 아이디을 Path Variable로 받음)
         composable(
             route = Routes.Welcome.route + "/{userID}",
-            arguments = listOf(navArgument(name = "userID") { type = NavType.StringType })
+            arguments = listOf(navArgument(name = "userID") { type = NavType.StringType }) // argument type 지정
         ) {
             WelcomeScreen(
                 it.arguments?.getString("userID")   // nullable 타입으로 선언
