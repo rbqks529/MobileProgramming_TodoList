@@ -23,11 +23,11 @@ fun Register(
     userID: String?,
     userPasswd: String?
 ) {
-
+    // 전달받은 ID를 State로 지정
     var userIdState by remember {
         mutableStateOf(userID ?: "")
     }
-
+    // 전달받은 PW를 State로 지정
     var userPasswdState by remember {
         mutableStateOf(userPasswd ?: "")
     }
@@ -45,6 +45,7 @@ fun Register(
         )
 
         Text(
+            // 사용자에게 입력 받은 UserID를 띄움
             text = "${userID}, let's start the registration process.",
             fontSize = 20.sp,
             fontWeight = FontWeight.ExtraBold

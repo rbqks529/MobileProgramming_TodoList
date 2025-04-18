@@ -22,14 +22,14 @@ fun LoginNavGraph(navController: NavHostController) {
             LoginScreen(
                 onWelcomeNavigate = { userId ->
                     navController.navigate(
-                        Routes.Welcome.route + "/${userId}"
+                        Routes.Welcome.route + "/${userId}" // WelcomeScreen의 루트에 userId를 넣어서 이동
                     )
                 },
                 onRegisterNavigate = { userId, userPassword ->
-                    if (userId.isNotEmpty() && userPassword.isNotEmpty())
+                    if (userId.isNotEmpty() && userPassword.isNotEmpty())   //ID랑 PW를 둘 다 입력 했을때 값을 넘겨줌
                         navController.navigate(Routes.Register.route + "?userID=${userId}&passWD=${userPassword}")
                     else
-                        navController.navigate(Routes.Register.route)
+                        navController.navigate(Routes.Register.route)   // 기본값으로 쿼리 파라미터 값을 지정
                 }
             )
         }
@@ -37,27 +37,24 @@ fun LoginNavGraph(navController: NavHostController) {
         // 로그인이 성공했을 때의 화면(유저 아이디을 Path Variable로 받음)
         composable(
             route = Routes.Welcome.route + "/{userID}",
-            arguments = listOf(
-                navArgument(name = "userID") {
-                    type = NavType.StringType
-                }
-            )
+            arguments = listOf(navArgument(name = "userID") { type = NavType.StringType })
         ) {
             WelcomeScreen(
                 it.arguments?.getString("userID")   // nullable 타입으로 선언
             )
         }
 
+        // 로그인에 실패했을때 로그인 할 때 쓴 UserId와 PassWD를 회원가입 페이지에 전달(쿼리 파라미터로)
         composable(
             route = Routes.Register.route + "?userID={userID}&passWD={passWD}",
             arguments = listOf(
                 navArgument(name = "userID") {
                     type = NavType.StringType
-                    defaultValue = "User"   //기본값 = "User"
+                    defaultValue = "User"   // 기본값 = "User"
                 },
                 navArgument(name = "passWD") {
                     type = NavType.StringType
-                    defaultValue = ""   //기본값 = ""
+                    defaultValue = ""   // 기본값 = ""
                 }
             )
         ) {

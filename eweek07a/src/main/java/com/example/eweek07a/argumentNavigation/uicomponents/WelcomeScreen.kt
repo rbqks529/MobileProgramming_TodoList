@@ -22,6 +22,7 @@ fun WelcomeScreen(userID: String?) {
             fontWeight = FontWeight.ExtraBold
         )
 
+        // 로그인에 성공했을 때 WelcomeText를 띄움
         Text(
             text = "Welcome, ${userID}",
             fontSize = 20.sp,
