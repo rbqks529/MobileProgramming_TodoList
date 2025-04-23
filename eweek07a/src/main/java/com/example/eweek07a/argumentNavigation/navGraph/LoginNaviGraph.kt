@@ -1,4 +1,4 @@
-package com.example.week06.example02.navGraph
+package com.example.eweek07a.argumentNavigation.navGraph
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -6,10 +6,10 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.week06.example02.model.Routes
-import com.example.week06.example02.uicomponents.LoginScreen
-import com.example.week06.example02.uicomponents.Register
-import com.example.week06.example02.uicomponents.WelcomeScreen
+import com.example.eweek07a.argumentNavigation.model.Routes
+import com.example.eweek07a.argumentNavigation.uicomponents.LoginScreen
+import com.example.eweek07a.argumentNavigation.uicomponents.Register
+import com.example.eweek07a.argumentNavigation.uicomponents.WelcomeScreen
 
 
 @Composable
@@ -37,7 +37,9 @@ fun LoginNavGraph(navController: NavHostController) {
         // 로그인이 성공했을 때의 화면(유저 아이디을 Path Variable로 받음)
         composable(
             route = Routes.Welcome.route + "/{userID}",
-            arguments = listOf(navArgument(name = "userID") { type = NavType.StringType }) // argument type 지정
+            arguments = listOf(navArgument(name = "userID") {
+                type = NavType.StringType
+            }) // argument type 지정
         ) {
             WelcomeScreen(
                 it.arguments?.getString("userID")   // nullable 타입으로 선언

@@ -1,4 +1,4 @@
-package com.example.week06.example02.model
+package com.example.eweek07a.argumentNavigation.model
 
 sealed class Routes(val route: String) {
     object Login : Routes("Login")

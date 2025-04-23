@@ -1,4 +1,4 @@
-package com.example.myapplication2.ui
+package com.example.eweek04a.composableExample
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -11,6 +11,7 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -42,6 +43,19 @@ fun SimpleTextFieldSample() {
     var text by rememberSaveable { mutableStateOf("") }
 
     TextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text("Label") },
+        singleLine = true
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SimpleOutlinedTextFieldSample() {
+    var text by rememberSaveable { mutableStateOf("") }
+
+    OutlinedTextField(
         value = text,
         onValueChange = { text = it },
         label = { Text("Label") },
@@ -111,6 +125,7 @@ fun TextFieldWithErrorState() {
     }
 }
 
+// TODO: 비밀번호 TextField
 @Preview(showBackground = true)
 @Composable
 fun PasswordTextField() {

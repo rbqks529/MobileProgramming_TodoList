@@ -1,9 +1,9 @@
-package com.example.week06.example02.uicomponents
+package com.example.eweek07a.argumentNavigation.uicomponents
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.example.week06.example02.navGraph.LoginNavGraph
+import com.example.eweek07a.argumentNavigation.navGraph.LoginNavGraph
 
 @Composable
 fun LoginMainScreen(modifier: Modifier = Modifier) {

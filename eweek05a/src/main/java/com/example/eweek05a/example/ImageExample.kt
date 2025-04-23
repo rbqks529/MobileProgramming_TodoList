@@ -33,7 +33,8 @@ private fun RasterImageExample2() {
     val imageBitmap = ImageBitmap.imageResource(R.drawable.img1)
     Image(
         bitmap = imageBitmap,
-        contentDescription = null
+        contentDescription = null,
+        contentScale = ContentScale.Crop
     )
 }
 
@@ -59,10 +60,10 @@ private fun VectorImageExample2() {
 @Preview
 @Composable
 private fun VectorImageExample3() {
-    val vectorImage = ImageVector.vectorResource(id = R.drawable.baseline_airplay_24)
     AsyncImage(
         model = R.drawable.baseline_airplay_24,
-        contentDescription = null
+        contentDescription = null,
+        modifier = Modifier.size(200.dp)
     )
 }
 

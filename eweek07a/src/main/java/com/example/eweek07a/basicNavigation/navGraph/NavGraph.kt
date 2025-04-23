@@ -41,13 +41,15 @@ fun NavGraph(
         }
 
         composable(route = Routes.ScreenC.route) {
-            Screen_C(onNavigate = { navController.navigate(Routes.Home.route){ // 홈으로 이동하는데 홈 빼고 스택 다 제거
-                popUpTo(navController.graph.startDestinationId) {
-                    saveState = true    //백 스택 항목의 상태 저장
-                    inclusive = true    //Home까지도 제거 => 스택에는 처음 홈만 남을듯
+            Screen_C(onNavigate = {
+                navController.navigate(Routes.Home.route) { // 홈으로 이동하는데 홈 빼고 스택 다 제거
+                    popUpTo(Routes.Home.route) {
+                        saveState = true    //백 스택 항목의 상태 저장
+                        inclusive = true    //Home까지도 제거 => 백 스택 모두 지우기
+                    }
+                    launchSingleTop = true //같은 엔트리 정보를 중복해서 저장 X
                 }
-                launchSingleTop = true //같은 엔트리 정보를 중복해서 저장 X
-            } })
+            })
         }
 
         composable(route = Routes.ScreenD.route) {  // ScreenD를 NavGraph에 선언해야 이동할 수 있음

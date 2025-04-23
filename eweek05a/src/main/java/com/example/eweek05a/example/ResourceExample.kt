@@ -59,7 +59,7 @@ private fun IconResourceExample() {
         Icon(painter = painterResource(id = R.drawable.baseline_airplay_24),
             contentDescription = null)
         Icon(imageVector = Icons.Default.Menu, contentDescription = null)
-        Icon(imageVector = ImageVector.vectorResource(id = R.drawable.baseline_airplay_24), contentDescription = null)
+        Icon(ImageVector.vectorResource(id = R.drawable.baseline_airplay_24), contentDescription = null)
     }
 }
 

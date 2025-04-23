@@ -237,38 +237,39 @@ package com.example.myapplication2
 /**
  * 인터페이스와 클래스 상속
  */
-/*abstract class Vehicle {
-    abstract fun drive()
-    fun parking() = println("Parking")
-}
-
-interface Flyable {
-    fun fly()
-    fun fly2() = println("")
-    var count: Int
-}
-
-class Car : Vehicle() {
-    override fun drive() = println("Driving a car")
-}
-
-// 인터페이스와 클래스를 동시에 상속
-class Airplane : Vehicle(), Flyable {
-    override fun drive() = println("Driving an airplane on the runway")
-    override fun fly() = println("Flying an airplane")
-    override var count = 1
-}
-
-fun main() {
-    val car = Car()
-    car.drive()
-    car.parking()
-
-    val airplane = Airplane()
-    airplane.drive()
-    airplane.fly()
-    airplane.parking()
-}*/
+// TODO: 상속 
+//abstract class Vehicle {
+//    abstract fun drive()
+//    fun parking() = println("Parking")
+//}
+//
+//interface Flyable {
+//    fun fly()
+//    fun fly2() = println("")
+//    var count: Int
+//}
+//
+//class Car : Vehicle() {
+//    override fun drive() = println("Driving a car")
+//}
+//
+//// 인터페이스와 클래스를 동시에 상속
+//class Airplane : Vehicle(), Flyable {
+//    override fun drive() = println("Driving an airplane on the runway")
+//    override fun fly() = println("Flying an airplane")
+//    override var count = 1
+//}
+//
+//fun main() {
+//    val car = Car()
+//    car.drive()
+//    car.parking()
+//
+//    val airplane = Airplane()
+//    airplane.drive()
+//    airplane.fly()
+//    airplane.parking()
+//}
 
 /**
  * object 클래스
@@ -565,14 +566,14 @@ class Person {
 //    println("변경 후: $numbers")
 //}
 
-fun main() {
-    val person = Person()
-    val result = with(person) {
-        this.name = "Charlie"
-        this.age = 35
-        println("$name, $age")
-        this.age + 10
-    }
-    println(person)
-    println(result)
-}
+//fun main() {
+//    val person = Person()
+//    val result = with(person) {
+//        this.name = "Charlie"
+//        this.age = 35
+//        println("$name, $age")
+//        this.age + 10
+//    }
+//    println(person)
+//    println(result)
+//}

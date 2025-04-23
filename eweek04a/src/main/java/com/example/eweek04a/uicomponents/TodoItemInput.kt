@@ -23,6 +23,7 @@ import java.time.format.DateTimeFormatter
 @Composable
 fun TodoItemInput(todoList: MutableList<Item>, modifier: Modifier = Modifier) {
     var textFieldState by remember { mutableStateOf("") }
+
     Row (
         modifier = Modifier.padding(15.dp),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
@@ -31,9 +32,8 @@ fun TodoItemInput(todoList: MutableList<Item>, modifier: Modifier = Modifier) {
         TextField(
             modifier = Modifier.weight(1f),
             value = textFieldState,
-            /*onValueChange = {text:String -> textFieldState = text}*/
             onValueChange = {textFieldState = it},
-            placeholder = { Text("할 일을 입력하세요.") }
+            placeholder = { Text("할 일을 입력하세요") }
         )
         Button(
             // 눌렀을 때 리스트에 추가하는 거 완성하기 (시간정보 생성해서 아이템 만들고 리스트 추가)

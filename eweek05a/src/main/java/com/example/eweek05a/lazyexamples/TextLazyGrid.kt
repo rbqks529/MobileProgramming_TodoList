@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.eweek05a.example.TextButtonExample
 
 
 @Composable
@@ -28,7 +29,7 @@ fun TextLazyGrid(dataList: MutableList<String>, modifier: Modifier = Modifier) {
     ) {
         //span을 통해서 맨 위에 한 줄을 number로 합침 (maxLinsSpan -> 한 줄 전체를 다 합침)
         item(span = { GridItemSpan(maxLineSpan) }){
-            Text("Number")
+            TextButtonExample()
         }
         items(dataList) { item ->
             TextCell(text = item, Modifier.background(Color.Green))

@@ -23,13 +23,8 @@ fun TodoListTitle(modifier: Modifier = Modifier) {
     )
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun TodoListTitlePreview() {
     TodoListTitle()
-}
-
-@Composable
-fun TodoItem(modifier: Modifier = Modifier) {
-
 }

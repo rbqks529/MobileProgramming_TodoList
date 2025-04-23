@@ -1,4 +1,4 @@
-package com.example.eweek05a.example
+package com.example.eweek05a.uicomponents
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
@@ -12,10 +12,8 @@ import com.example.eweek05a.R
 import com.example.eweek05a.model.ButtonType
 import com.example.eweek05a.model.ImageData
 import com.example.eweek05a.model.ImageUri
-import com.example.eweek05a.uicomponents.ButtonWithBadge
-import com.example.eweek05a.uicomponents.ButtonWithEmoji
-import com.example.eweek05a.uicomponents.ImageWithButton
 
+// 내가 만들어 본거(수업 시간에 사용한 Saver 사용)
 @Composable
 fun rememberSavableExample(modifier: Modifier = Modifier) {
         var img1State by rememberSaveable(

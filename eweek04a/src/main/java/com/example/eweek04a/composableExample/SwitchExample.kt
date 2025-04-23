@@ -1,4 +1,4 @@
-package com.example.myapplication2.ui
+package com.example.eweek04a.composableExample
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons

@@ -33,11 +33,9 @@ fun MainScreen(
     modifier: Modifier = Modifier,
     imageViewModel: ImageViewModel = viewModel()
 ) {
-    //val imageViewModel: ImageViewModel = viewModel()
-
-    // 동일한 viewModel 객체를 사용하게 됨
     val imageList = imageViewModel.imageList
     val orientation = LocalConfiguration.current.orientation
+
     val state: LazyListState = rememberLazyListState()
     // 코루틴 스코프 객체 (Composable 함수 내의 특정 이벤트 안에서만 실행 가능)
     val scope: CoroutineScope = rememberCoroutineScope()
@@ -60,7 +58,7 @@ fun MainScreen(
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 itemsIndexed(items = imageList) { index, item ->
-                    ImageListData(index = index, imageData = item, imageList = imageList)
+                    ImageListItem(index = index, imageData = item)
                 }
             }
             AnimatedVisibility(visible = showButton) {
@@ -80,7 +78,7 @@ fun MainScreen(
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 itemsIndexed(items = imageList) { index, item ->
-                    ImageListData(index = index, imageData = item, imageList = imageList)
+                    ImageListItem(index = index, imageData = item)
                 }
             }
         }

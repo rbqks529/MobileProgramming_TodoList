@@ -14,6 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlin.random.Random
 
 @Composable
 fun TextCell(text: String, modifier: Modifier = Modifier) {
@@ -34,7 +35,8 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 @Composable
 fun TextCellRandomSize(text: String, modifier: Modifier = Modifier) {
     // 사이즈만 랜덤하게 변경
-    val cellSize = (50..100).random()
+    //val cellSize = (50..100).random()
+    val cellSize = Random.nextInt(50, 101)
     Box(
         modifier = modifier
             .size(cellSize.dp)

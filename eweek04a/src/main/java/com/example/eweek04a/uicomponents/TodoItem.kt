@@ -39,7 +39,7 @@ fun TodoItem(item: Item, modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun TodoItemPreview() {
     Column {

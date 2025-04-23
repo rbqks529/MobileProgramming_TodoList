@@ -26,9 +26,6 @@ fun MainScreen(modifier: Modifier = Modifier) {
         TodoItemFactory.makeTodoList()
     }
     var switchState by remember { mutableStateOf(false) }
-    val onCheckedChange = { isChecked: Boolean ->
-        switchState = isChecked
-    }
 
     Column(modifier = modifier) {
         TodoListTitle()
@@ -44,7 +41,9 @@ fun MainScreen(modifier: Modifier = Modifier) {
         ) {
             Text(text = "미완료 항목만 보기")
             Spacer(modifier = Modifier.width(10.dp))
-            TodoListSwitch(switchState) { onCheckedChange(it) }
+            TodoListSwitch(switchState) { isChecked ->
+                switchState = isChecked
+            }
         }
 
         TodoList(todoList, switchState, Modifier.weight(1f))
